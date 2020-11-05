@@ -43,5 +43,5 @@ values(101,575758,5858,3456,2556,5530303),
 --getting average salary from salary table corresponding to the gender in employee details table
 select avg(basic_pay) from salary where dept_id in(select dept_id from department where id in(select id from employee_details where gender='F'));
 --ability to perform UC 5 operations like getting salary details for specified conditions
-select basic_pay from salary where dept_id in(select dept_id from department where id in(select id from employee_details where name='Rakesh'));
+select Max(basic_pay) from salary where dept_id in(select dept_id from department where id in(select id from employee_details where name='Rakesh'));
 select basic_pay from salary where dept_id in(select dept_id from department where id in(select id from employee_details where start_date between cast('2018-1-1' as date) and convert(date,getdate())));
